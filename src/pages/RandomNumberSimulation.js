@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import factorial from "factorial";
 function RandomNumberSimulation() {
-  const [serverQty, setServerQty] = useState();
+  const [serverQty, setServerQty] = useState(2);
   const [lambda, setLambda] = useState(2.65);
   const [meu, setMeu] = useState(2.45);
   const [testArray, settestArray] = useState([]);
@@ -9,6 +9,7 @@ function RandomNumberSimulation() {
   const [CustomerNum, setCustomerNum] = useState(1);
   const [serverUtilizations, setServerUtilizations] = useState([]);
   const [show, setShow] = useState(false);
+  const [showTable, setShowTable] = useState(false)
 
   let commulativeF = 0;
   let Arrival = 0;
@@ -191,6 +192,10 @@ function RandomNumberSimulation() {
     setShow(true);
   };
 
+  const TableShow = ()=>{
+setShowTable(true)
+  }
+
   return (
     <div>
       
@@ -221,6 +226,7 @@ function RandomNumberSimulation() {
    <center>
      {show &&  performanceObj.map((elem, key) => (
         <div key={key} className="perf">
+          <button onClick={TableShow}>show table</button>
           <h1>Performance Measures</h1>
           <p><span style={{fontWeight:"bolder",marginRight:"15px"}}> Average Arrival </span>{elem.avgArrival}</p>
           <p><span style={{fontWeight:"bolder",marginRight:"15px"}}>Average Service</span>{elem.avgService}</p>
@@ -247,6 +253,92 @@ function RandomNumberSimulation() {
       )
       }
       </center>
+     
+     {showTable && <div style={{width:'100%'}}>
+      <table style={{border:"1px solid black"}}>
+                
+                <thead >
+                  <tr>
+                    <th>
+                      CID
+                    </th>
+                    <th>
+                      Arrival Time
+                    </th>
+                    <th>
+                      Service Time
+                    </th>
+                    <th>
+                      Start Time
+                    </th>
+                    <th>
+                      End Time
+                    </th>
+                    <th>
+                      Turnaround time
+                    </th>
+                    <th>
+                      Response Time
+                    </th>
+                    <th>
+                      Wait Time
+                    </th>
+                    <th>
+                      Server Assigned
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {testArray.map((elem, key) => (
+                    <tr
+                      
+                      key={key}
+                    >
+                      <th
+                        
+                      >
+                        {elem.customerId}
+                      </th>
+                      <th
+                      
+                      >
+                        {elem.arrivalTime}
+                      </th>
+                      <th
+                      
+                      >
+                        {elem.serviceTime}
+                      </th>
+                      <th
+                      >
+                        {elem.startTime}
+                      </th>
+                      <th
+                      >
+                        {elem.endTime}
+                      </th>
+                      <th
+                      >
+                        {elem.turnaroundTime}
+                      </th>
+                      <th
+                      >
+                        {elem.responseTime}
+                      </th>
+                      <th
+                      >
+                        {elem.waitTime}
+                      </th>
+                      <th
+                     
+                      >
+                        S{elem.server}
+                      </th>
+                    </tr>
+                  ))}
+                </tbody>
+      </table>
+      </div>}
     </div>
   );
 }
