@@ -1,0 +1,252 @@
+[
+ {
+  "Customers": "C1",
+  "Arrival": 0,
+  "Service": 5
+ },
+ {
+  "Customers": "C2",
+  "Arrival": 1,
+  "Service": 10
+ },
+ {
+  "Customers": "C3",
+  "Arrival": 2,
+  "Service": 7
+ },
+ {
+  "Customers": "C4",
+  "Arrival": 3,
+  "Service": 15
+ },
+ {
+  "Customers": "C5",
+  "Arrival": 4,
+  "Service": 5
+ },
+ {
+  "Customers": "C6",
+  "Arrival": 6,
+  "Service": 8
+ },
+ {
+  "Customers": "C7",
+  "Arrival": 7,
+  "Service": 10
+ },
+ {
+  "Customers": "C8",
+  "Arrival": 8,
+  "Service": 6
+ },
+ {
+  "Customers": "C9",
+  "Arrival": 9,
+  "Service": 7
+ },
+ {
+  "Customers": "C10",
+  "Arrival": 10,
+  "Service": 10
+ },
+ {
+  "Customers": "C11",
+  "Arrival": 11,
+  "Service": 5
+ },
+ {
+  "Customers": "C12",
+  "Arrival": 12,
+  "Service": 6
+ },
+ {
+  "Customers": "C13",
+  "Arrival": 13,
+  "Service": 8
+ },
+ {
+  "Customers": "C14",
+  "Arrival": 14,
+  "Service": 12
+ },
+ {
+  "Customers": "C15",
+  "Arrival": 16,
+  "Service": 5
+ },
+ {
+  "Customers": "C16",
+  "Arrival": 18,
+  "Service": 10
+ },
+ {
+  "Customers": "C17",
+  "Arrival": 19,
+  "Service": 7
+ },
+ {
+  "Customers": "C18",
+  "Arrival": 20,
+  "Service": 8
+ },
+ {
+  "Customers": "C19",
+  "Arrival": 21,
+  "Service": 12
+ },
+ {
+  "Customers": "C20",
+  "Arrival": 22,
+  "Service": 5
+ },
+ {
+  "Customers": "C21",
+  "Arrival": 24,
+  "Service": 6
+ },
+ {
+  "Customers": "C22",
+  "Arrival": 25,
+  "Service": 10
+ },
+ {
+  "Customers": "C23",
+  "Arrival": 26,
+  "Service": 8
+ },
+ {
+  "Customers": "C24",
+  "Arrival": 27,
+  "Service": 7
+ },
+ {
+  "Customers": "C25",
+  "Arrival": 28,
+  "Service": 15
+ },
+ {
+  "Customers": "C26",
+  "Arrival": 30,
+  "Service": 5
+ },
+ {
+  "Customers": "C27",
+  "Arrival": 32,
+  "Service": 8
+ },
+ {
+  "Customers": "C28",
+  "Arrival": 33,
+  "Service": 10
+ },
+ {
+  "Customers": "C29",
+  "Arrival": 35,
+  "Service": 6
+ },
+ {
+  "Customers": "C30",
+  "Arrival": 36,
+  "Service": 7
+ },
+ {
+  "Customers": "C31",
+  "Arrival": 37,
+  "Service": 5
+ },
+ {
+  "Customers": "C32",
+  "Arrival": 38,
+  "Service": 12
+ },
+ {
+  "Customers": "C33",
+  "Arrival": 40,
+  "Service": 7
+ },
+ {
+  "Customers": "C34",
+  "Arrival": 41,
+  "Service": 10
+ },
+ {
+  "Customers": "C35",
+  "Arrival": 42,
+  "Service": 5
+ },
+ {
+  "Customers": "C36",
+  "Arrival": 43,
+  "Service": 6
+ },
+ {
+  "Customers": "C37",
+  "Arrival": 45,
+  "Service": 8
+ },
+ {
+  "Customers": "C38",
+  "Arrival": 46,
+  "Service": 12
+ },
+ {
+  "Customers": "C39",
+  "Arrival": 47,
+  "Service": 5
+ },
+ {
+  "Customers": "C40",
+  "Arrival": 49,
+  "Service": 7
+ },
+ {
+  "Customers": "C41",
+  "Arrival": 51,
+  "Service": 10
+ },
+ {
+  "Customers": "C42",
+  "Arrival": 52,
+  "Service": 6
+ },
+ {
+  "Customers": "C43",
+  "Arrival": 53,
+  "Service": 8
+ },
+ {
+  "Customers": "C44",
+  "Arrival": 55,
+  "Service": 15
+ },
+ {
+  "Customers": "C45",
+  "Arrival": 56,
+  "Service": 5
+ },
+ {
+  "Customers": "C46",
+  "Arrival": 58,
+  "Service": 10
+ },
+ {
+  "Customers": "C47",
+  "Arrival": 59,
+  "Service": 7
+ },
+ {
+  "Customers": "C48",
+  "Arrival": 60,
+  "Service": 6
+ },
+ {
+  "Customers": "C49",
+  "Arrival": 62,
+  "Service": 12
+ },
+ {
+  "Customers": "C50",
+  "Arrival": 63,
+  "Service": 5
+ }
+]
