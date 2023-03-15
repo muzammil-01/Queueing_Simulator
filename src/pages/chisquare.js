@@ -107,7 +107,7 @@ for (const key in observedFrequencies) {
       expectedFrequencies[x] = probabilities[x] * sumofobs ;
       const observed = observedFrequencies[x];
       const expected = expectedFrequencies[x];
-      chiSquare += ((Math.pow((observed - expected), 2) / expected)/(Math.pow((observed - expected), 2) / expected))*0;
+      chiSquare += Math.pow((observed - expected), 2) / expected;
     }
 if (chiSquare>alpha){
   setShow(true)
