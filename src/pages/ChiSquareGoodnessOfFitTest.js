@@ -363,7 +363,7 @@ if (chiSquare>alpha){
   </div>
   {/* {results && (
     <div>
-      <h2>Results</h2>
+      <center><h2>Results</h2></center>
       <table>
         <thead>
           <tr>
@@ -388,37 +388,33 @@ if (chiSquare>alpha){
           ))}
         </tbody>
       </table>
-      <p>Chi Square Value: {results.chiSquare}</p>
+      <center><p>Chi Square Value: {results.chiSquare}</p></center>
     </div>
   )} */}
 <center>
-  
+<div style={{width:"100%"}}>
 {show &&  performanceObj.map((elem, key) => (
         <div key={key} className="perf">
           <h1>Performance Measures</h1>
-          <p><span style={{fontWeight:"bolder",marginRight:"15px"}}>Average Arrival </span>{elem.avgArrival}</p>
-          <p><span style={{fontWeight:"bolder",marginRight:"15px"}}>Average Service</span>{elem.avgService}</p>
-          <p><span style={{fontWeight:"bolder",marginRight:"15px"}}>Average response</span>{elem.avgResponse}</p>
-          <p><span style={{fontWeight:"bolder",marginRight:"15px"}}>Average Turn Around</span>{elem.avgTurnAround}</p>
-          <p><span style={{fontWeight:"bolder",marginRight:"15px"}}>Average Wait </span>{elem.avgWait}</p>
+          <p><span style={{fontWeight:"bolder",marginRight:"15px",float:"left"}}>Average Arrival </span><span style={{float:"right"}}>{elem.avgArrival}</span></p><br/>
+          <p><span style={{fontWeight:"bolder",marginRight:"15px",float:"left"}}>Average Service</span><span style={{float:"right"}}>{elem.avgService}</span></p><br/>
+          <p><span style={{fontWeight:"bolder",marginRight:"15px",float:"left"}}>Average response</span><span style={{float:"right"}}>{elem.avgResponse}</span></p><br/>
+          <p><span style={{fontWeight:"bolder",marginRight:"15px",float:"left"}}>Average Turn Around</span><span style={{float:"right"}}>{elem.avgTurnAround}</span></p><br/>
+          <p><span style={{fontWeight:"bolder",marginRight:"15px",float:"left"}}>Average Wait </span><span style={{float:"right"}}>{elem.avgWait}</span></p>
         </div>
       ))}
-      
-        {" "}
        {show && <h1>Server utilizations</h1>}
      
       {show && serverUtilizations.map((elem, key) => (
         <div key={key} className="perf">
           <p>
-            {" "}
-
-            <span style={{fontWeight:"bolder",marginRight:"15px"}}>Utilization For Server</span> {key + 1} {elem}
+            <span style={{fontWeight:"bolder",marginRight:"15px",float:"left"}}>Utilization For Server {key + 1}</span> <span style={{float:"right"}}>{elem}</span><br/>
           </p>
         </div>
       )
       )
       }
-
+</div>
       </center>
 </div>
 </>);
