@@ -61,11 +61,11 @@ function RandomNumberSimulation() {
         setOld((prev) => [...prev, myObj]);
       }
 
-      finalTableData(ArrivalArray, ServiceArray);
+      dataForPerformanceMeasures(ArrivalArray, ServiceArray);
     }
   }
 
-  function finalTableData(arrivals, serviceTimes) {
+  function dataForPerformanceMeasures(arrivals, serviceTimes) {
     const servers = new Array(serverQty).fill(0);
     arrivals.forEach((val, i) => {
       let serverNum = 0;
@@ -226,41 +226,8 @@ function RandomNumberSimulation() {
       <br />
       <center><button onClick={runSimulation}>simulate</button></center>
       </div>
-     {show && <button onClick={TableShow}>Show Table</button>}
-      {performanceObj.length>0 &&  performanceObj.map((elem, key) => (
-        <div key={key} className="perf">
-          <center><h1 style={{fontWeight:"bolder",paddingBottom:"18px"}}>Performance Measures</h1></center>
-          <p><span className="left"> Average Arrival </span><span className="right">{elem.avgArrival}</span></p>
-          <br/>
-          <p><span className="left">Average Service</span><span className="right">{elem.avgService}</span></p>
-          <br/>
-          <p><span className="left">Average response</span><span className="right">{elem.avgResponse}</span></p>
-          <br/>
-          <p><span className="left">Average Turn Around</span><span className="right">{elem.avgTurnAround}</span></p>
-          <br/>
-          <p><span className="left">Average Wait</span> <span className="right">{elem.avgWait}</span></p>
-          <br/>
-        </div>
-      ))}
-
-{serverUtilizations.length >0 && <h1>Server utilizations</h1>}
-     
-     {serverUtilizations.length >0 && serverUtilizations.map((elem, key) => (
-       <div key={key} className="perf">
-         <p>
-           {" "}
-           <span className="left">
-           Utilization For Server{key + 1}
-           </span>
-            <span className="right"> {elem}</span><br/>
-         </p>
-       </div>
-     )
-     )
-     }
-
-      
-      {showTable && <div style={{width:'100%'}}>
+     {show && <center><button onClick={TableShow} style={{marginBottom:"10px"}}>Show Table</button></center>}
+     {showTable && <div style={{width:'100%'}}>
       <center>{testArray.length ==0 && <h1>NO data to show</h1>}</center>
       <table style={{border:"1px solid black"}}>
                 <thead >
@@ -286,13 +253,47 @@ function RandomNumberSimulation() {
                       <th>{elem.endTime}</th>
                       <th>{elem.turnaroundTime}</th>
                       <th>{elem.responseTime}</th>
-                      <th>{elem.waitTime}</th>
-                      <th> S{elem.server}</th>
+                      <th>{Math.abs(elem.waitTime)}</th>
+                      <th>{elem.server}</th>
                     </tr>
                   ))}
                 </tbody>
       </table>
-      </div>}
+      </div>
+      }
+      {performanceObj.length>0 &&  performanceObj.map((elem, key) => (
+        <div key={key} className="perf">
+          <center><h1 style={{fontWeight:"bolder",paddingBottom:"18px"}}>Performance Measures</h1></center>
+          <p><span className="left"> Average Arrival </span><span className="right">{elem.avgArrival}</span></p>
+          <br/>
+          <p><span className="left">Average Service</span><span className="right">{elem.avgService}</span></p>
+          <br/>
+          <p><span className="left">Average response</span><span className="right">{elem.avgResponse}</span></p>
+          <br/>
+          <p><span className="left">Average Turn Around</span><span className="right">{elem.avgTurnAround}</span></p>
+          <br/>
+          <p><span className="left">Average Wait</span> <span className="right">{elem.avgWait}</span></p>
+          <br/>
+        </div>
+      ))}
+
+{serverUtilizations.length >0 && <center><h1>Server utilizations</h1></center>}
+     
+     {serverUtilizations.length >0 && serverUtilizations.map((elem, key) => (
+      
+       <div key={key} className="perf">
+         <p>
+           {" "}
+           <span className="left">
+           Utilization For Server{key + 1}
+           </span>
+            <span className="right"> {elem}</span><br/>
+         </p>
+       </div>
+     )
+     )
+     }
+     
     </div>
   );
 }

@@ -46,10 +46,6 @@ export default function Home() {
 
       //utilization time
       var p = lambda / meu;
-      if(p > 1){
-        alert("please try other values")
-        window.location.reload()
-      }
       var lengthOfQueue = Math.pow(p, 2) / (1 - p);
       PerformanceMeasures(lengthOfQueue, p, lambda, meu);
     } 
@@ -65,10 +61,6 @@ export default function Home() {
       }
       lambda = 1 / lambda;
       var p = lambda / meu;
-      if(p > 1){
-        alert("please try other values")
-        window.location.reload()
-      }
       var lengthOfQueue = (lambda * lambda) / (meu * (meu - lambda));
       PerformanceMeasures(lengthOfQueue, p,lambda,meu);
     } 
@@ -87,10 +79,6 @@ export default function Home() {
       }
       lambda = 1 / lambda;
       p = lambda / meu;
-      if(p > 1){
-        alert("please try other values")
-        window.location.reload()
-      }
       var lengthOfQueue = (lambda * lambda * variance + p * p) / (2 * (1 - p));
       PerformanceMeasures(lengthOfQueue, p, lambda, meu);
     } 
@@ -106,10 +94,6 @@ export default function Home() {
       }
       lambda = 1 / lambda;
       p = lambda / meu;
-      if(p > 1){
-        alert("please try other values")
-        window.location.reload()
-      }
       var lengthOfQueue = (lambda * lambda * variance + p * p) / (2 * (1 - p));
       PerformanceMeasures(lengthOfQueue, p, lambda, meu);
     } else if ( (distributionArrivalTime === "Exponential" || distributionArrivalTime === "Poisson") &&
@@ -125,10 +109,6 @@ export default function Home() {
       }
       lambda = 1 / lambda;
       p = lambda / meu;
-      if(p > 1){
-        alert("please try other values")
-        window.location.reload()
-      }
       var lengthOfQueue = (lambda * lambda * variance + p * p) / (2 * (1 - p));
       PerformanceMeasures(lengthOfQueue, p, lambda, meu);
     } 
@@ -148,10 +128,6 @@ export default function Home() {
       }
       lambda = 1/lambda
       p = lambda / meu;
-      if(p > 1){
-        alert("please try other values")
-        window.location.reload()
-      }
       var ca = varianceAT / Math.pow(1 / lambda, 2); //coefficientOfArrivalTime
       if(varianceMinMax){
         var cs = varianceMinMax / Math.pow(1 / meu, 2); //coefficientOfServiceTime
@@ -186,10 +162,6 @@ export default function Home() {
         }
         lambda = 1 / lambda;
         var p = lambda / (meu * numberOfMultiservers);
-        if(p > 1){
-          alert("please try other values")
-          window.location.reload()
-        }
         var summation = SummationCalcutation(numberOfMultiservers,p)
         console.log("summation",summation)
         var fact = factorial(numberOfMultiservers)
@@ -205,6 +177,10 @@ export default function Home() {
         averageNumberOfCustomerInSystem =lambda * averageTimeOfCustomerInSystem; //L
         idle = 1 - p;
         var utilization = p
+        if(utilization > 1){
+          return alert("please try other values")
+        }
+        else{
         navigate({
           pathname:"/performance",
           search: createSearchParams({
@@ -217,6 +193,7 @@ export default function Home() {
             Po
           }).toString()
         })
+      }
 
         break;
 
@@ -232,10 +209,6 @@ export default function Home() {
         }
         lambda = 1 / lambda;
         var p = lambda / (meu * numberOfMultiservers);
-        if(p > 1){
-          alert("please try other values")
-          window.location.reload()
-        }
         var summation = SummationCalcutation(numberOfMultiservers,p)
         console.log("summation",summation)
         var fact = factorial(numberOfMultiservers)
@@ -263,6 +236,9 @@ export default function Home() {
           lambda * averageTimeOfCustomerInSystem_GGC; //L
           idle = 1-p;
           var utilization = p
+          if(utilization > 1){
+           return alert("please try other values")
+          }
         navigate({
           pathname:"/performance",
           search: createSearchParams({
@@ -300,7 +276,9 @@ export default function Home() {
      averageNumberOfCustomerInSystem =lambda * averageTimeOfCustomerInSystem; //L
      idle = 1 - p;
      var utilization = p
-
+     if(utilization>1){
+      return alert("please try other values")
+     }
   navigate({
     pathname:"/performance",
     search: createSearchParams({
